@@ -7,7 +7,13 @@ function ProductList() {
   return (
     <div>
       <h3>ECommerce Project</h3>
-      <ProductItem />
+      {/* <ProductItem /> */}
+
+      <ul>
+        {dummyProductData.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
