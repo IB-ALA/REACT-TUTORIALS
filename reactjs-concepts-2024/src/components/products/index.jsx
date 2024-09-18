@@ -1,17 +1,23 @@
 import ProductItem from "./components/product-item";
 
-const dummyProductData = ["Product 1", "Product 2", "Product 3"];
-
 // nested components
-function ProductList() {
+function ProductList({ name, city, listOfProducts }) {
+  // console.log(props);
+
+  // const { name, city } = props;
+
   return (
     <div>
       <h3>ECommerce Project</h3>
       {/* <ProductItem /> */}
 
+      <h4>
+        Name is {name} and he belongs to {city} city
+      </h4>
+
       <ul>
-        {dummyProductData.map((item, index) => (
-          <li key={index}>{item}</li>
+        {listOfProducts.map((item, index) => (
+          <ProductItem singleProductItem={item} key={index} />
         ))}
       </ul>
     </div>
