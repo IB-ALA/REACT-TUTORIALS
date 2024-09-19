@@ -3,7 +3,7 @@ import styles from "./product-item.module.css"; // module styling
 // nested component
 
 function ButtonComponent() {
-  console.log(styles);
+  // console.log(styles);
 
   return <button className={styles.buttonStyle}>Click</button>;
 }
