@@ -1,0 +1,9 @@
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  transition: all ease-in-out 0.5s;
+}
+/* works */
+/* .title:hover {
+  transform: translateY(-20px);
+} */

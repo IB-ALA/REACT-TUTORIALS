@@ -1,4 +1,5 @@
 import ProductItem from "./components/product-item";
+import "./style.css";
 
 // nested components
 function ProductList({ name, city, listOfProducts }) {
@@ -8,7 +9,7 @@ function ProductList({ name, city, listOfProducts }) {
 
   return (
     <div>
-      <h3>ECommerce Project</h3>
+      <h3 className="title">ECommerce Project</h3>
       {/* <ProductItem /> */}
 
       <h4>
