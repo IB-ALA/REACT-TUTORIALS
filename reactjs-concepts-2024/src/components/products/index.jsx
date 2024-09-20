@@ -1,12 +1,21 @@
+import { useState } from "react";
 import ProductItem from "./components/product-item";
 import "./style.css";
+
+const initialState = false;
 
 // nested components
 function ProductList({ name, city, listOfProducts }) {
   // console.log(props);
   // const { name, city } = props;
 
-  const flag = false;
+  // const flag = false;
+
+  // useState()
+  const [flag, setFlag] = useState(initialState);
+  // 'initialState' can be any type of value.
+
+  console.log(flag);
 
   function renderTextBlock(flag) {
     return flag ? (
@@ -16,6 +25,10 @@ function ProductList({ name, city, listOfProducts }) {
     ) : (
       <h4>Hello world</h4>
     );
+  }
+
+  function handleToggleText() {
+    setFlag(!flag);
   }
 
   // const renderTextBlock = flag ? (
@@ -43,8 +56,17 @@ function ProductList({ name, city, listOfProducts }) {
       {/* <ProductItem /> */}
 
       {/* conditional rendering */}
-      {renderTextBlock(flag)}
+      {/* {renderTextBlock(flag)} */}
       {/* {renderTextBlock} */}
+
+      {flag ? (
+        <h4>
+          {name} and {city}
+        </h4>
+      ) : (
+        <h4>Hello</h4>
+      )}
+      <button onClick={handleToggleText}>Toggle Text</button>
 
       <ul>
         {listOfProducts.map((item, index) => (
