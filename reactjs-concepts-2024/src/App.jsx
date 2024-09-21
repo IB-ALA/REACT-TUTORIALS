@@ -1,6 +1,8 @@
 import "./App.css";
 import ClassBasedComponents from "./components/1-class-based-components";
 import FunctionalComponent from "./components/2-functional-component";
+import ContextButtonComponent from "./components/context-concept/button";
+import ContextTextComponent from "./components/context-concept/text";
 import ProductList from "./components/products";
 import Users from "./components/users";
 
@@ -19,7 +21,10 @@ function App() {
         city="Accra"
       /> */}
 
-      <Users />
+      {/* <Users /> */}
+
+      <ContextButtonComponent />
+      <ContextTextComponent />
     </div>
   );
 }
