@@ -1,5 +1,6 @@
 import "./App.css";
 import ClassBasedComponents from "./components/1-class-based-components";
+import UseReducerExample from "./components/14-use-reducer-example";
 import FunctionalComponent from "./components/2-functional-component";
 import ContextButtonComponent from "./components/context-concept/button";
 import ContextTextComponent from "./components/context-concept/text";
@@ -23,8 +24,12 @@ function App() {
 
       {/* <Users /> */}
 
-      <ContextButtonComponent />
-      <ContextTextComponent />
+      {/* 13 useContext */}
+      {/* <ContextButtonComponent />
+      <ContextTextComponent /> */}
+
+      {/* 14 - useReducer */}
+      <UseReducerExample />
     </div>
   );
 }
