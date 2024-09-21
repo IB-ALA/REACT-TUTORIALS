@@ -3,11 +3,13 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-export default function Users(params) {
+export default function Users() {
   const [usersList, setUserList] = useState([]);
+  const [pending, setPending] = useState(false);
 
-  async function fetchAllUsers(params) {
+  async function fetchAllUsers() {
     try {
+      setPending(true);
       const apiResponse = await fetch("http://localhost:5000/dea/products");
       const result = await apiResponse.json();
 
@@ -15,23 +17,35 @@ export default function Users(params) {
 
       if (result?.Success) {
         setUserList(result?.data);
+        setPending(false);
       } else {
         setUserList([]);
+        setPending(false);
       }
     } catch (error) {
       console.log(error);
     }
   }
 
-  useEffect(() => {
+  // we can use this or just insert the fetchAllUsers into the onClick
+  function handleFetchListOfUsers() {
+    setPending(true);
     fetchAllUsers();
-  }, []);
+  }
 
-  console.log(usersList);
+  // useEffect(() => {
+  //   fetchAllUsers();
+  // }, []);
+
+  // console.log(usersList);
+
+  // managing loading state
+  if (pending) return <h1>Fetching users! Please wait.</h1>;
 
   return (
     <div>
       <h1>All Users List</h1>
+      <button onClick={handleFetchListOfUsers}>Fetch Users Lists</button>
       <ul>
         {usersList && usersList.length > 0 ? (
           usersList.map((user) => (
@@ -45,8 +59,6 @@ export default function Users(params) {
         ) : (
           <h1>No users found! Please try again.</h1>
         )}
-
-        <p>hmm</p>
       </ul>
     </div>
   );
