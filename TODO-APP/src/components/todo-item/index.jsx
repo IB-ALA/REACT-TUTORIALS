@@ -6,9 +6,10 @@ import {
   Typography,
 } from "@mui/material";
 
-function TodoItem({ todo, getDetailsOfCurrentTodo }) {
+function TodoItem({ todo, getDetailsOfCurrentTodo, index }) {
   return (
     <Card
+      key={index}
       sx={{
         maxWidth: 350,
         display: "flex",

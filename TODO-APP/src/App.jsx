@@ -61,8 +61,9 @@ function App() {
       <h1 className="header-title">Simple Todo APP Using Material UI</h1>
       <div className="todoListWrapper">
         {todoList && todoList.length > 0
-          ? todoList.map((todo) => (
+          ? todoList.map((todo, index) => (
               <TodoItem
+                key={index}
                 todo={todo}
                 getDetailsOfCurrentTodo={getDetailsOfCurrentTodo}
               />
