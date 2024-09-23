@@ -5,7 +5,9 @@ import FunctionalComponent from "./components/2-functional-component";
 import ContextButtonComponent from "./components/context-concept/button";
 import ContextTextComponent from "./components/context-concept/text";
 import FormComponent from "./components/form";
+import LoginComponent from "./components/login";
 import ProductList from "./components/products";
+import RegisterComponent from "./components/register";
 import Users from "./components/users";
 
 const dummyProductData = ["Product 1", "Product 2", "Product 3"];
@@ -32,7 +34,14 @@ function App() {
       {/* 14 - useReducer */}
       {/* <UseReducerExample /> */}
 
-      <FormComponent />
+      {/* <FormComponent /> */}
+
+      <div style={{ display: "flex", gap: "10px" }}>
+        <LoginComponent />
+        <RegisterComponent />
+
+        {/* assignmen for textarea and select inputs*/}
+      </div>
     </div>
   );
 }
