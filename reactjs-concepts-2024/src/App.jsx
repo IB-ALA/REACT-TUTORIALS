@@ -4,6 +4,7 @@ import UseReducerExample from "./components/14-use-reducer-example";
 import FunctionalComponent from "./components/2-functional-component";
 import ContextButtonComponent from "./components/context-concept/button";
 import ContextTextComponent from "./components/context-concept/text";
+import FormComponent from "./components/form";
 import ProductList from "./components/products";
 import Users from "./components/users";
 
@@ -29,7 +30,9 @@ function App() {
       <ContextTextComponent /> */}
 
       {/* 14 - useReducer */}
-      <UseReducerExample />
+      {/* <UseReducerExample /> */}
+
+      <FormComponent />
     </div>
   );
 }
