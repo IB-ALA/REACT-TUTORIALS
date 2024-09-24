@@ -4,7 +4,7 @@ function NotFoundPage() {
   return (
     <div>
       <h2>This page doesn't exist</h2>
-      <Link to={"/recipe-list"}>Go to recipe list page</Link>
+      <Link to={"/home/recipe-list"}>Go to recipe list page</Link>
     </div>
   );
 }
