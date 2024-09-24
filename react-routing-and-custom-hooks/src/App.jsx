@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import "./App.css";
+import CommentsList from "./pages/comments";
+import RecipeList from "./pages/recipes";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const navigate = useNavigate();
 
   return (
-    <>
+    <div>
+      <h2>React routing, Custom hooks and more</h2>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Link to={"/recipe-list"}>
+          Alternative way of navigating to recipe list page
+        </Link>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <button
+        onClick={() => navigate("/recipe-list")}
+        style={{ backgroundColor: "black", color: "white" }}
+      >
+        Recipe List page
+      </button>
+
+      <button
+        onClick={() => navigate("/comments-list")}
+        style={{ backgroundColor: "black", color: "white" }}
+      >
+        Comments List page
+      </button>
+      <Routes>
+        <Route path="/recipe-list" element={<RecipeList />} />
+        <Route path="/comments-list" element={<CommentsList />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
