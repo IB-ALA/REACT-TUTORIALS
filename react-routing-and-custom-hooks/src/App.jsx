@@ -3,6 +3,7 @@ import "./App.css";
 import CommentsList from "./pages/comments";
 import RecipeList from "./pages/recipes";
 import RecipeDetailsPage from "./pages/recipe-details";
+import NotFoundPage from "./pages/not-found";
 
 function App() {
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ function App() {
         <Route path="/recipe-list" element={<RecipeList />} />
         <Route path="/comments-list" element={<CommentsList />} />
         <Route path="/recipe-list/:id" element={<RecipeDetailsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );
