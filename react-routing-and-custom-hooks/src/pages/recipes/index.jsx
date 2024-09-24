@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 
 function RecipeList() {
-  const location = useLocation();
-  console.log(location); // has the path name and all search queries
+  const location = useLocation(); // has the path name and all search queries
+  // console.log(location);
 
   return (
     <div>

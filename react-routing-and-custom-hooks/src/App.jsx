@@ -4,6 +4,7 @@ import CommentsList from "./pages/comments";
 import RecipeList from "./pages/recipes";
 import RecipeDetailsPage from "./pages/recipe-details";
 import NotFoundPage from "./pages/not-found";
+import Layout from "./components/layout";
 
 function App() {
   const navigate = useNavigate();
@@ -29,11 +30,15 @@ function App() {
       >
         Comments List page
       </button>
+
       <Routes>
-        <Route path="/recipe-list" element={<RecipeList />} />
-        <Route path="/comments-list" element={<CommentsList />} />
-        <Route path="/recipe-list/:id" element={<RecipeDetailsPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        {/* common layout, using outlet */}
+        <Route path="/home" element={<Layout />}>
+          <Route path="recipe-list" element={<RecipeList />} />
+          <Route path="comments-list" element={<CommentsList />} />
+          <Route path="recipe-list/:id" element={<RecipeDetailsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
       </Routes>
     </div>
   );
