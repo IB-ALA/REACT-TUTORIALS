@@ -8,6 +8,7 @@ import Layout from "./components/layout";
 import ReactHookFormExamplePage from "./pages/react-hook-form-example";
 import Hooks from "./pages/hooks";
 import UseMemoExample from "./pages/use-memo-example";
+import UseCallbackExample from "./pages/use-callback-example";
 
 // another way of routes
 function CustomRoutes() {
@@ -27,6 +28,7 @@ function CustomRoutes() {
     { path: "/react-hook-form", element: <ReactHookFormExamplePage /> },
     { path: "/hooks", element: <Hooks /> },
     { path: "/memo", element: <UseMemoExample /> },
+    { path: "/callback", element: <UseCallbackExample /> },
   ]);
 
   return element;
