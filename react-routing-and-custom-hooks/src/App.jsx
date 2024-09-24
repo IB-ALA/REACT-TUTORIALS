@@ -5,6 +5,7 @@ import RecipeList from "./pages/recipes";
 import RecipeDetailsPage from "./pages/recipe-details";
 import NotFoundPage from "./pages/not-found";
 import Layout from "./components/layout";
+import ReactHookFormExamplePage from "./pages/react-hook-form-example";
 
 // another way of routes
 function CustomRoutes() {
@@ -21,6 +22,7 @@ function CustomRoutes() {
       ],
     },
     { path: "*", element: <NotFoundPage /> },
+    { path: "/react-hook-form", element: <ReactHookFormExamplePage /> },
   ]);
 
   return element;
