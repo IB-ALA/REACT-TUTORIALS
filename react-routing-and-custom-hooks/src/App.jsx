@@ -2,6 +2,7 @@ import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import CommentsList from "./pages/comments";
 import RecipeList from "./pages/recipes";
+import RecipeDetailsPage from "./pages/recipe-details";
 
 function App() {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ function App() {
       <Routes>
         <Route path="/recipe-list" element={<RecipeList />} />
         <Route path="/comments-list" element={<CommentsList />} />
+        <Route path="/recipe-list/:id" element={<RecipeDetailsPage />} />
       </Routes>
     </div>
   );
