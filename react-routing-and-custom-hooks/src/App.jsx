@@ -9,6 +9,7 @@ import ReactHookFormExamplePage from "./pages/react-hook-form-example";
 import Hooks from "./pages/hooks";
 import UseMemoExample from "./pages/use-memo-example";
 import UseCallbackExample from "./pages/use-callback-example";
+import ReactQuerydemo from "./pages/react-query";
 
 // another way of routes
 function CustomRoutes() {
@@ -29,6 +30,7 @@ function CustomRoutes() {
     { path: "/hooks", element: <Hooks /> },
     { path: "/memo", element: <UseMemoExample /> },
     { path: "/callback", element: <UseCallbackExample /> },
+    { path: "/react-query-demo", element: <ReactQuerydemo /> },
   ]);
 
   return element;
