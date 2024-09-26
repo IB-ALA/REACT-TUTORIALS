@@ -20,7 +20,9 @@ function ProductListPage() {
 
         <div className="grid grid-cols-2 gap-5 mt-10 lg:mt-16 lg:gap-8 lg:grid-cols-4">
           {listOfProducts && listOfProducts?.length > 0 ? (
-            listOfProducts?.map((product) => <ProductItem product={product} />)
+            listOfProducts?.map((product) => (
+              <ProductItem key={product?.id} product={product} />
+            ))
           ) : (
             <h3>No products found</h3>
           )}

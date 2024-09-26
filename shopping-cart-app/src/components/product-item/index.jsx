@@ -1,9 +1,11 @@
-//
-
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ShoppingCartContext } from "../../context";
 
 function ProductItem({ product }) {
   const navigate = useNavigate();
+
+  const { cartItems, handleAddTocart } = useContext(ShoppingCartContext);
 
   return (
     <div className="relative group border border-cyan-700 p-6 cursor-pointer">
@@ -34,6 +36,14 @@ function ProductItem({ product }) {
         onClick={() => navigate(`/product-details/${product?.id}`)}
       >
         View Details
+      </button>
+
+      <button
+        disabled={cartItems?.findIndex((item) => item.id === product.id) > -1}
+        className="disabled:opacity-65 px-5 mt-5 w-full py-2 rounded-none bg-black text-white font-bold text-lg"
+        onClick={() => handleAddTocart(product)}
+      >
+        Add to Cart
       </button>
     </div>
   );
