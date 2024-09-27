@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Route, Routes, useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 import ProductListPage from "./pages/productList";
 import CartListPage from "./pages/cart";
 import ProductDetailsPage from "./pages/porductDetails";

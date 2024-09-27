@@ -22,37 +22,37 @@ function CartItem({ item }) {
 
             <button
               onClick={() => handleRemoveFromcart(item, true)}
-              className="text-sm px-4 py-3 bg-black text-white font-extrabold"
+              className="text-sm px-4 py-3 bg-black text-white font-extrabold mt-8"
             >
               REMOVE
             </button>
           </div>
+        </div>
 
-          <div className="ml=auto">
-            <h3 className="text-lg font-bold text-gray-900">
-              ₵{item?.totalPrice?.toFixed(2)}
-            </h3>
+        <div className="ml=auto">
+          <h3 className="text-lg font-bold text-gray-900">
+            ₵{item?.totalPrice?.toFixed(2)}
+          </h3>
 
-            <p className="mt-2 mb-3 font-bold text-[16px]">
-              Quantity: {item?.quantity}
-            </p>
+          <p className="mt-2 mb-3 font-bold text-[16px]">
+            Quantity: {item?.quantity}
+          </p>
 
-            <div className="mt-3 flex gap-2">
-              <button
-                disabled={item?.quantity === 1}
-                onClick={() => handleRemoveFromcart(item, false)}
-                className="disabled:opacity-65 border border-[#000] font-bold text-[20px]"
-              >
-                -
-              </button>
+          <div className="mt-3 flex gap-2">
+            <button
+              disabled={item?.quantity === 1}
+              onClick={() => handleRemoveFromcart(item, false)}
+              className="disabled:opacity-65 border border-[#000] font-bold text-[20px]"
+            >
+              -
+            </button>
 
-              <button
-                onClick={() => handleAddTocart(item)}
-                className="border border-[#000] font-bold text-[20px]"
-              >
-                +
-              </button>
-            </div>
+            <button
+              onClick={() => handleAddTocart(item)}
+              className="border border-[#000] font-bold text-[20px]"
+            >
+              +
+            </button>
           </div>
         </div>
       </div>
