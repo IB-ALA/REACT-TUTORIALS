@@ -85,7 +85,7 @@ function ShoppingCartProvider({ children }) {
     saveCartItems(copyExistingCartItems);
   }
 
-  console.log(cartItems);
+  // console.log(cartItems);
 
   function saveCartItems(cartItemsToSave) {
     localStorage.setItem("cartItems", JSON.stringify(cartItemsToSave));

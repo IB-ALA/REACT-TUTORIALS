@@ -4,9 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import CartItem from "../../components/cart-item";
 
 function CartListPage() {
-  const { cartItems } = useContext(ShoppingCartContext);
+  const { cartItems, loading } = useContext(ShoppingCartContext);
 
   const navigate = useNavigate();
+
+  if (loading) return <h1>Loading Cart! Please wait... </h1>;
 
   return (
     <div className="max-w-5xl mx-auto max-md:max-w-xl py-4">
