@@ -8,3 +8,10 @@ test("render hello world text", () => {
 
   expect(checkHelloWorldText).toBeInTheDocument();
 });
+
+test("check name by test id", () => {
+  const { getByTestId } = render(<HelloWorld />);
+  const getElement = getByTestId("name");
+
+  expect(getElement.textContent).toBe("IB DEV");
+});
