@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import ApiCallTest from "../components/api-testing";
 
 describe("Api testing", () => {
@@ -23,7 +23,7 @@ describe("Api testing", () => {
 
     render(<ApiCallTest />);
 
-    expect(screen.getByText("Loadind data...")).toBeInTheDocument();
+    expect(screen.getByText("Loading data...")).toBeInTheDocument();
 
     await waitFor(() => {
       expect(screen.getByText("umbrella")).toBeInTheDocument();

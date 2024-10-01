@@ -11,9 +11,12 @@ function ApiCallTest() {
       if (result?.data?.length > 0) {
         setProducts(result?.data);
         setLoading(false);
+      } else {
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   }
 
@@ -25,7 +28,9 @@ function ApiCallTest() {
     <div>
       <h2>List Of Products</h2>
       {isLoading ? (
-        <h3>Loadind data...</h3>
+        <h3>Loading data...</h3>
+      ) : products?.length === 0 ? (
+        <h3>No Couldn't Products. Try Again</h3>
       ) : (
         <ul>
           {products.map((product) => (

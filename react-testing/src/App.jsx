@@ -1,5 +1,7 @@
 import "./App.css";
 import ApiCallTest from "./components/api-testing";
+import ThemeToggleButton from "./components/context-testing/button";
+import ThemeContent from "./components/context-testing/theme";
 import Counter from "./components/counter";
 import HelloWorld from "./components/helloWorld";
 
@@ -10,6 +12,9 @@ function App() {
       <HelloWorld />
       <Counter />
       <ApiCallTest />
+
+      <ThemeToggleButton />
+      <ThemeContent />
     </div>
   );
 }
