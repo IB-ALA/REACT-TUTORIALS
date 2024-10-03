@@ -31,6 +31,11 @@ function RegisterPage() {
               );
               if (auth.currentUser.displayName) {
                 setLoading(false);
+                setRegisterFormData({
+                  name: "",
+                  email: "",
+                  password: "",
+                });
                 navigate("/profile");
               }
             })
@@ -42,11 +47,6 @@ function RegisterPage() {
       .catch((error) => console.log({ error }));
 
     // console.log({registerFormData});
-    setRegisterFormData({
-      name: "",
-      email: "",
-      password: "",
-    });
   }
 
   // doing it in the context file

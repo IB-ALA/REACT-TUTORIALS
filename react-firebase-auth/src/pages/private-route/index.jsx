@@ -5,9 +5,9 @@ import { Navigate } from "react-router-dom";
 function AuthPage({ children }) {
   const { user, loading } = useContext(AuthContext);
 
-  if (loading) {
-    <h1>loading...</h1>;
-  }
+  // if (loading) {
+  //   <h1>loading...</h1>;
+  // }
 
   if (user) return children;
 
